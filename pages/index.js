@@ -9,7 +9,7 @@ function HomePage() {
     const enteredEmail = emailInputRef.current.value;
     const enteredFeedback = feedbackInputRef.current.value;
 
-    // fetch();
+    fetch(); // { email: 'test@email.com', text: 'Some feedback text' }
   }
 
   return (
