@@ -1,12 +1,15 @@
 import { useRef } from "react";
 
 function HomePage() {
-  const enteredEmail = useRef();
-  const enteredFeedback = useRef();
+  const emailInputRef = useRef();
+  const feedbackInputRef = useRef();
 
   function submitFormHandler(event) {
     event.preventDefault();
-    console.log(event);
+    const enteredEmail = emailInputRef.current.value;
+    const enteredFeedback = feedbackInputRef.current.value;
+
+    // fetch();
   }
 
   return (
@@ -15,11 +18,11 @@ function HomePage() {
       <form onSubmit={submitFormHandler}>
         <div>
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" ref={enteredEmail} />
+          <input type="email" id="email" ref={emailInputRef} />
         </div>
         <div>
           <label htmlFor="feedback">Feedback</label>
-          <textarea id="feedback" rows="5" ref={enteredFeedback} />
+          <textarea id="feedback" rows="5" ref={feedbackInputRef} />
         </div>
         <button>Submit feedback</button>
       </form>
